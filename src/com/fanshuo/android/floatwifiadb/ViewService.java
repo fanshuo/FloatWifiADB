@@ -1,12 +1,11 @@
 package com.fanshuo.android.floatwifiadb;
 
-import android.app.Activity;
+import android.app.Service;
+import android.content.Intent;
 import android.graphics.PixelFormat;
-import android.graphics.Rect;
-import android.os.Bundle;
+import android.os.IBinder;
 import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -17,7 +16,11 @@ import android.view.WindowManager.LayoutParams;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class MainActivity extends Activity {
+/**
+ * @author fanshuo
+ * @date 2013-4-23 下午4:55:40
+ */
+public class ViewService extends Service{
 
 	boolean hasFloatView = false;
 	boolean isOn = false;
@@ -32,11 +35,13 @@ public class MainActivity extends Activity {
 	private float mTouchStartY;
 	private float x;
 	private float y;
-
+	
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+	public void onCreate() {
+		super.onCreate();
+		CommandUtil.RootCommand("setprop service.adb.tcp.port -1" + "\n"
+				+ "stop adbd" + "\n" + "start adbd");
+		createView();
 	}
 
 	private void createView() {
@@ -67,7 +72,7 @@ public class MainActivity extends Activity {
 		wmParams.x = 0;
 		wmParams.y = 45;
 
-		wmParams.width = ScreenSizeUtil.Dp2Px(this, 90);
+		wmParams.width = WindowManager.LayoutParams.WRAP_CONTENT;
 		wmParams.height = WindowManager.LayoutParams.WRAP_CONTENT;
 
 		floatButton.setOnLongClickListener(new OnLongClickListener() {
@@ -121,16 +126,18 @@ public class MainActivity extends Activity {
 			canMove = false;
 		}else{
 			if (isOn) {
-				// TODO 关闭
+				Toast.makeText(this, R.string.has_close, Toast.LENGTH_SHORT).show();
+				// 关闭
 				CommandUtil.RootCommand("setprop service.adb.tcp.port -1" + "\n"
 						+ "stop adbd" + "\n" + "start adbd");
-				floatButton.setText("Wifi调试已关闭");
+				floatButton.setBackgroundResource(R.drawable.selector_float_button_off);
 				isOn = false;
 			} else {
-				// TODO 开启
+				Toast.makeText(this, R.string.has_open, Toast.LENGTH_SHORT).show();
+				// 开启
 				CommandUtil.RootCommand("setprop service.adb.tcp.port 5555" + "\n"
 						+ "stop adbd" + "\n" + "start adbd");
-				floatButton.setText("Wifi调试已开启");
+				floatButton.setBackgroundResource(R.drawable.selector_float_button_on);
 				isOn = true;
 			}
 		}
@@ -162,11 +169,10 @@ public class MainActivity extends Activity {
 			hasFloatView = false;
 		}
 	}
-
+	
 	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.activity_main, menu);
-		return true;
+	public IBinder onBind(Intent intent) {
+		return null;
 	}
 
 }

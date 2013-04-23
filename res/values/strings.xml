@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">FloatWifiADB</string>
-    <string name="menu_settings">Settings</string>
-    <string name="turn_on">Turn On</string>
-    <string name="turn_off">Turn Off</string>
+
+    <string name="app_name">wifi-adb浮动开关</string>
+    <string name="about">关于</string>
+    <string name="open_float">开启悬浮窗</string>
+    <string name="about_body">版本:1.0\n作者:范硕\n邮箱:fanshuo1989@gmail.com\n\n特点：程序体积非常小，占用运行内存少，省电。\n\n使用说明：开启悬浮窗后，长按进行移动，点击进行开关。</string>
+    <string name="press_again_exit">再按一次退出程序</string>
+    <string name="float_text">Wifi调试</string>
+    <string name="has_open">Wifi调试已打开</string>
+    <string name="has_close">Wifi调试已关闭</string>
+
 </resources>

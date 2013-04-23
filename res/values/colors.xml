@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="holo_blue_bright">#FF00ddff</color>
+    <color name="divider_slide_left">#FF1E1E1E</color>
+	<color name="my_blue">#FF427FED</color>
+	<color name="my_red">#FFDB4437</color>
+	<color name="my_yellow">#FFF4B400</color>
+	<color name="my_green">#FF489935</color>
+</resources>
