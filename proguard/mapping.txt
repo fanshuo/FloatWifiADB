@@ -1,0 +1,55 @@
+com.fanshuo.android.floatwifiadb.CommandUtil -> com.fanshuo.android.floatwifiadb.a:
+    boolean RootCommand(java.lang.String) -> a
+com.fanshuo.android.floatwifiadb.MyApplication -> com.fanshuo.android.floatwifiadb.MyApplication:
+    android.view.WindowManager$LayoutParams wmParams -> a
+    android.view.WindowManager$LayoutParams getMywmParams() -> a
+com.fanshuo.android.floatwifiadb.UserSetting -> com.fanshuo.android.floatwifiadb.UserSetting:
+    long exitTime -> a
+    void onCreate(android.os.Bundle) -> onCreate
+    void toggleService(boolean) -> a
+    boolean onPreferenceTreeClick(android.preference.PreferenceScreen,android.preference.Preference) -> onPreferenceTreeClick
+    void onDestroy() -> onDestroy
+    boolean onKeyDown(int,android.view.KeyEvent) -> onKeyDown
+    void showDialog(int,int) -> a
+    void onSharedPreferenceChanged(android.content.SharedPreferences,java.lang.String) -> onSharedPreferenceChanged
+com.fanshuo.android.floatwifiadb.UserSetting$1 -> com.fanshuo.android.floatwifiadb.b:
+    com.fanshuo.android.floatwifiadb.UserSetting this$0 -> a
+    boolean onPreferenceChange(android.preference.Preference,java.lang.Object) -> onPreferenceChange
+com.fanshuo.android.floatwifiadb.UserSetting$2 -> com.fanshuo.android.floatwifiadb.c:
+    com.fanshuo.android.floatwifiadb.UserSetting this$0 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+com.fanshuo.android.floatwifiadb.ViewService -> com.fanshuo.android.floatwifiadb.ViewService:
+    boolean hasFloatView -> a
+    boolean isOn -> b
+    boolean canMove -> c
+    android.view.WindowManager wm -> d
+    android.view.WindowManager$LayoutParams wmParams -> e
+    android.view.View myFV -> f
+    android.widget.Button floatButton -> g
+    float mTouchStartX -> h
+    float mTouchStartY -> i
+    float x -> j
+    float y -> k
+    void onCreate() -> onCreate
+    void createView() -> b
+    void onButtonClick() -> c
+    void updateViewPosition() -> d
+    void onDestroy() -> onDestroy
+    android.os.IBinder onBind(android.content.Intent) -> onBind
+    java.lang.String getLocalIpv4Address() -> a
+    void access$0(com.fanshuo.android.floatwifiadb.ViewService,float) -> a
+    void access$1(com.fanshuo.android.floatwifiadb.ViewService,float) -> b
+    void access$2(com.fanshuo.android.floatwifiadb.ViewService,float) -> c
+    void access$3(com.fanshuo.android.floatwifiadb.ViewService,float) -> d
+    void access$4(com.fanshuo.android.floatwifiadb.ViewService) -> a
+    void access$5(com.fanshuo.android.floatwifiadb.ViewService) -> b
+com.fanshuo.android.floatwifiadb.ViewService$1 -> com.fanshuo.android.floatwifiadb.d:
+    com.fanshuo.android.floatwifiadb.ViewService this$0 -> a
+    boolean onLongClick(android.view.View) -> onLongClick
+com.fanshuo.android.floatwifiadb.ViewService$2 -> com.fanshuo.android.floatwifiadb.e:
+    com.fanshuo.android.floatwifiadb.ViewService this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.fanshuo.android.floatwifiadb.ViewService$MyOnTouchListener -> com.fanshuo.android.floatwifiadb.f:
+    com.fanshuo.android.floatwifiadb.ViewService this$0 -> a
+    boolean onTouch(android.view.View,android.view.MotionEvent) -> onTouch

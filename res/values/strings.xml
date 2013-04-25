@@ -7,7 +7,7 @@
     <string name="about_body">Version: 1.0\nAuthor: FanShuo\nEmail: fanshuo1989@gmail.com\n\nFeature: Program size is very small, less memory, energy saving.\n\nInstructions for use:Open a floating window, press and hold to move, click to switch.</string>
     <string name="press_again_exit">Press again to exit the program</string>
     <string name="float_text">Wifi-adb</string>
-    <string name="has_open">Wifi-adb Is Open</string>
+    <string name="has_open">Wifi-adb Is Open, IP address is : </string>
     <string name="has_close">Wifi-adb Is Close</string>
 
 </resources>

@@ -1,5 +1,13 @@
 package com.fanshuo.android.floatwifiadb;
 
+import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.net.SocketException;
+import java.util.Collections;
+import java.util.List;
+
+import org.apache.http.conn.util.InetAddressUtils;
+
 import android.app.Service;
 import android.content.Intent;
 import android.graphics.PixelFormat;
@@ -133,12 +141,13 @@ public class ViewService extends Service{
 				floatButton.setBackgroundResource(R.drawable.selector_float_button_off);
 				isOn = false;
 			} else {
-				Toast.makeText(this, R.string.has_open, Toast.LENGTH_SHORT).show();
 				// 开启
 				CommandUtil.RootCommand("setprop service.adb.tcp.port 5555" + "\n"
 						+ "stop adbd" + "\n" + "start adbd");
 				floatButton.setBackgroundResource(R.drawable.selector_float_button_on);
 				isOn = true;
+				String s = getResources().getString(R.string.has_open).toString() + getLocalIpv4Address();
+				Toast.makeText(this, s, Toast.LENGTH_LONG).show();
 			}
 		}
 	}
@@ -173,6 +182,34 @@ public class ViewService extends Service{
 	@Override
 	public IBinder onBind(Intent intent) {
 		return null;
+	}
+	
+	public String getLocalIpv4Address() {
+		try {
+			String ipv4;
+			List<NetworkInterface> nilist = Collections.list(NetworkInterface
+					.getNetworkInterfaces());
+			if (nilist.size() > 0) {
+				for (NetworkInterface ni : nilist) {
+					List<InetAddress> ialist = Collections.list(ni
+							.getInetAddresses());
+					if (ialist.size() > 0) {
+						for (InetAddress address : ialist) {
+							if (!address.isLoopbackAddress()
+									&& InetAddressUtils
+											.isIPv4Address(ipv4 = address
+													.getHostAddress())) {
+								return ipv4;
+							}
+						}
+					}
+				}
+			}
+
+		} catch (SocketException ex) {
+
+		}
+		return "";
 	}
 
 }

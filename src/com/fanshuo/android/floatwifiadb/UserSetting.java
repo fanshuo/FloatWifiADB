@@ -1,6 +1,13 @@
 ﻿package com.fanshuo.android.floatwifiadb;
 
+import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.net.SocketException;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+import org.apache.http.conn.util.InetAddressUtils;
 
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningServiceInfo;
@@ -128,8 +135,7 @@ public class UserSetting extends PreferenceActivity implements
 		final Dialog dialog = new Dialog(this, R.style.NoTitleDialog);
 		dialog.setContentView(R.layout.activity_about);
 		dialog.setTitle(i);
-		TextView dialogTextView = (TextView) dialog
-				.findViewById(R.id.textView);
+		TextView dialogTextView = (TextView) dialog.findViewById(R.id.textView);
 		dialogTextView.setText(j);
 		Button button = (Button) dialog.findViewById(R.id.button1);
 		button.setOnClickListener(new OnClickListener() {
@@ -143,7 +149,7 @@ public class UserSetting extends PreferenceActivity implements
 	@Override
 	public void onSharedPreferenceChanged(SharedPreferences sharedPreferences,
 			String key) {
-		
+
 	}
 
 }

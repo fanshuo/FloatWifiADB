@@ -1,0 +1,36 @@
+com.fanshuo.android.floatwifiadb.MyApplication
+com.fanshuo.android.floatwifiadb.MyApplication: MyApplication()
+com.fanshuo.android.floatwifiadb.R$color: int divider_slide_left
+com.fanshuo.android.floatwifiadb.R$color: int holo_blue_bright
+com.fanshuo.android.floatwifiadb.R$color: int my_blue
+com.fanshuo.android.floatwifiadb.R$color: int my_green
+com.fanshuo.android.floatwifiadb.R$color: int my_red
+com.fanshuo.android.floatwifiadb.R$color: int my_yellow
+com.fanshuo.android.floatwifiadb.R$drawable: int bg_float_button_off
+com.fanshuo.android.floatwifiadb.R$drawable: int bg_float_button_off_press
+com.fanshuo.android.floatwifiadb.R$drawable: int bg_float_button_on
+com.fanshuo.android.floatwifiadb.R$drawable: int bg_float_button_on_press
+com.fanshuo.android.floatwifiadb.R$drawable: int ic_launcher
+com.fanshuo.android.floatwifiadb.R$drawable: int selector_float_button_off
+com.fanshuo.android.floatwifiadb.R$drawable: int selector_float_button_on
+com.fanshuo.android.floatwifiadb.R$id: int button1
+com.fanshuo.android.floatwifiadb.R$id: int float_button
+com.fanshuo.android.floatwifiadb.R$id: int textView
+com.fanshuo.android.floatwifiadb.R$layout: int activity_about
+com.fanshuo.android.floatwifiadb.R$layout: int view_float
+com.fanshuo.android.floatwifiadb.R$string: int about
+com.fanshuo.android.floatwifiadb.R$string: int about_body
+com.fanshuo.android.floatwifiadb.R$string: int app_name
+com.fanshuo.android.floatwifiadb.R$string: int float_text
+com.fanshuo.android.floatwifiadb.R$string: int has_close
+com.fanshuo.android.floatwifiadb.R$string: int has_open
+com.fanshuo.android.floatwifiadb.R$string: int open_float
+com.fanshuo.android.floatwifiadb.R$string: int press_again_exit
+com.fanshuo.android.floatwifiadb.R$style: int AppBaseTheme
+com.fanshuo.android.floatwifiadb.R$style: int AppTheme
+com.fanshuo.android.floatwifiadb.R$style: int NoTitleDialog
+com.fanshuo.android.floatwifiadb.R$xml: int setting
+com.fanshuo.android.floatwifiadb.UserSetting
+com.fanshuo.android.floatwifiadb.UserSetting: UserSetting()
+com.fanshuo.android.floatwifiadb.ViewService
+com.fanshuo.android.floatwifiadb.ViewService: ViewService()
