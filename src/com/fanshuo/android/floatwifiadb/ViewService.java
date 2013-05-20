@@ -10,6 +10,7 @@ import org.apache.http.conn.util.InetAddressUtils;
 
 import android.app.Service;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.PixelFormat;
 import android.os.IBinder;
 import android.view.Gravity;
@@ -43,13 +44,27 @@ public class ViewService extends Service{
 	private float mTouchStartY;
 	private float x;
 	private float y;
+	SharedPreferences pre;
 	
 	@Override
 	public void onCreate() {
 		super.onCreate();
-		CommandUtil.RootCommand("setprop service.adb.tcp.port -1" + "\n"
-				+ "stop adbd" + "\n" + "start adbd");
 		createView();
+		pre = getSharedPreferences("float_wifi_adb_pre", 0);
+		boolean isStart = pre.getBoolean("isStart", false);
+		//回复原来的状态
+		if(isStart){
+			//设为开启
+			floatButton.setBackgroundResource(R.drawable.selector_float_button_on);
+			isOn = true;
+			Toast.makeText(this, R.string.is_start, Toast.LENGTH_LONG).show();
+		}
+		else{
+			// 设为关闭
+			floatButton.setBackgroundResource(R.drawable.selector_float_button_off);
+			isOn = false;
+			Toast.makeText(this, R.string.is_stop, Toast.LENGTH_SHORT).show();
+		}
 	}
 
 	private void createView() {
@@ -134,12 +149,13 @@ public class ViewService extends Service{
 			canMove = false;
 		}else{
 			if (isOn) {
-				Toast.makeText(this, R.string.has_close, Toast.LENGTH_SHORT).show();
 				// 关闭
 				CommandUtil.RootCommand("setprop service.adb.tcp.port -1" + "\n"
 						+ "stop adbd" + "\n" + "start adbd");
 				floatButton.setBackgroundResource(R.drawable.selector_float_button_off);
 				isOn = false;
+				Toast.makeText(this, R.string.has_close, Toast.LENGTH_SHORT).show();
+				pre.edit().putBoolean("isStart", false).commit();
 			} else {
 				// 开启
 				CommandUtil.RootCommand("setprop service.adb.tcp.port 5555" + "\n"
@@ -148,6 +164,7 @@ public class ViewService extends Service{
 				isOn = true;
 				String s = getResources().getString(R.string.has_open).toString() + getLocalIpv4Address();
 				Toast.makeText(this, s, Toast.LENGTH_LONG).show();
+				pre.edit().putBoolean("isStart", true).commit();
 			}
 		}
 	}

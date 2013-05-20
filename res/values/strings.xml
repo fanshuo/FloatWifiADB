@@ -9,5 +9,7 @@
     <string name="float_text">Wifi-adb</string>
     <string name="has_open">Wifi-adb Is Open, IP address is : </string>
     <string name="has_close">Wifi-adb Is Close</string>
+    <string name="is_start">Wifi-adb is turned on</string>
+    <string name="is_stop">Wifi-adb is turned off</string>
 
 </resources>
