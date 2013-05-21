@@ -57,7 +57,8 @@ public class ViewService extends Service{
 			//设为开启
 			floatButton.setBackgroundResource(R.drawable.selector_float_button_on);
 			isOn = true;
-			Toast.makeText(this, R.string.is_start, Toast.LENGTH_LONG).show();
+			String s = getResources().getString(R.string.is_start).toString() + getLocalIpv4Address();
+			Toast.makeText(this, s, Toast.LENGTH_LONG).show();
 		}
 		else{
 			// 设为关闭

@@ -4,12 +4,12 @@
     <string name="app_name">浮动wifi-adb</string>
     <string name="about">关于</string>
     <string name="open_float">开启悬浮窗</string>
-    <string name="about_body">版本:1.0\n作者:范硕\n邮箱:fanshuo1989@gmail.com\n\n特点：程序体积非常小，占用运行内存少，省电。\n\n使用说明：开启悬浮窗后，长按进行移动，点击进行开关。</string>
+    <string name="about_body">版本:1.2\n作者:范硕\n邮箱:fanshuo1989@gmail.com\n\n特点：程序体积非常小，占用运行内存少，省电。\n\n使用说明：开启悬浮窗后，长按进行移动，点击进行开关。</string>
     <string name="press_again_exit">再按一次退出程序</string>
     <string name="float_text">Wifi调试</string>
     <string name="has_open">Wifi调试已打开，IP地址是：</string>
     <string name="has_close">Wifi调试已关闭</string>
-    <string name="is_start">Wifi调试处于开启状态</string>
+    <string name="is_start">Wifi调试处于开启状态,IP地址是：</string>
     <string name="is_stop">Wifi调试处于关闭状态</string>
 
 </resources>
